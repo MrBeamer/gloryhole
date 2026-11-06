@@ -1,0 +1,19 @@
+<form class="form" action="/messages/new" method="post">
+  <div class="form__field">
+    <label class="form__label-code" for="secret-message">
+      What's your secret... Go on, we're listening.
+    </label>
+    <textarea
+      class="form__input"
+      name="secretMessage"
+      id="secret-message"
+      required
+      rows="4"
+      cols="50"
+    ></textarea>
+  </div>
+  <div class="form__auth">
+    <button class="form__submit" type="submit">Send it into the world</button>
+    <a href="/" class="form__back">Back</a>
+  </div>
+</form>

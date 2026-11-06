@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cool" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <main class="container__center">
+      <h1 class="page__title"><%= title %></h1>
+      <p class="page__subtitle">
+        Members-only. Anonymous outside, honest within.
+      </p>
+      <% if (locals.currentUser && locals.currentUser.is_club_member) { %>
+      <div class="welcome-card">
+        <h2 class="welcome-card__title">Look who talked their way in</h2>
+        <p class="welcome-card__description">
+          That code did the trick — the door's open, <%= currentUser.username
+          %>. <br />Welcome to Gloryhole.
+        </p>
+        <form action="/logout" method="POST" style="display: inline">
+          <button type="submit" class="form__submit">Logout</button>
+        </form>
+        <p class="form__signup-text">
+          Curiosity got you?
+          <a class="form__signup-link" href="/messages">Show all messages</a>
+        </p>
+      </div>
+      <%} else if (locals.currentUser) { %>
+      <div class="welcome-card">
+        <h2 class="welcome-card__title">Down, tiger.</h2>
+        <p class="welcome-card__description">
+          This club's invite-only and spots are scarce as hen's teeth. You've
+          been added to the waitlist — patience looks good on you, <%=
+          currentUser.username %>.
+        </p>
+        <form action="/logout" method="POST" style="display: inline">
+          <button type="submit" class="form__submit">Logout</button>
+        </form>
+        <p class="form__signup-text">
+          Sneaking in the back?
+          <a class="form__signup-link" href="/enter-code">Enter code</a>
+        </p>
+      </div>
+      <% } else { %>
+      <%- include("partials/login-form") %>
+      <% } %>
+      <div class="messages__container">
+        <div class="messages__wrapper">
+          <p class="messages__title">Ears to the wall</p>
+          <p class="messages__subtitle">Sign in to see who wrote it.</p>
+        </div>
+        <%- include("partials/message-list") %>
+      </div>
+    </main>
+  </body>
+</html>

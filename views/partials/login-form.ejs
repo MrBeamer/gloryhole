@@ -1,0 +1,32 @@
+<form class="form" action="/login" method="post">
+  <div class="form__field">
+    <label class="form__label" for="username">Username</label>
+    <input
+      class="form__input"
+      type="text"
+      name="username"
+      id="username"
+      autocomplete="username"
+      required
+    />
+  </div>
+  <div class="form__field">
+    <label class="form__label" for="password">Password</label>
+    <input
+      class="form__input"
+      type="password"
+      name="password"
+      id="password"
+      autocomplete="current-password"
+      required
+    />
+  </div>
+
+  <div class="form__auth">
+    <button class="form__submit" type="submit">Login</button>
+    <p class="form__signup-text"">
+    Not in yet? 
+      <a class="form__signup-link" href="/sign-up">Charm your way in</a>
+    </p>
+  </div>
+</form>

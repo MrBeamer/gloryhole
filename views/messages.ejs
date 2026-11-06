@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cool" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title><!- title!></title>
+  </head>
+  <body>
+    <main class="container__center">
+      <h1 class="page__title"><%- title %></h1>
+      <p class="page__subtitle">
+        Inside the hole, every secret carries a name.
+      </p>
+      <% if (locals.currentUser && locals.currentUser.is_club_member) { %>
+      <p>logged in and member</p>
+      <% } else if (locals.currentUser) { %>
+      <p>only logged in</p>
+      <% } else { %>
+      <p>not logged in</p>
+      <% } %>
+      <div class="messages__container">
+        <div class="messages__grid">
+          <div class="messages__item">
+            <div class="messages__header">
+              <div class="messages__user-info">
+                <div class="messages__avatar-wrapper">
+                  <img
+                    class="messages__avatar"
+                    src="uploads/<%=locals.currentUser.avatar=%>"
+                    alt="user avatar"
+                  />
+                </div>
+                <p class="messages__username">Unknown member</p>
+              </div>
+              <p class="messages__timestamp">2h</p>
+            </div>
+            <p class="messages__text">
+              I flirted with a stranger at a wedding last weekend and thought
+              about it every day since. My partner was three tables away.
+            </p>
+          </div>
+        </div>
+      </div>
+      <%- include("partials/message-form") %>
+    </main>
+  </body>
+</html>

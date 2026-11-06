@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cool" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <main class="container__center">
+      <form class="form" action="/enter-code" method="post">
+        <div class="form__field">
+          <label class="form__label-code" for="invite-code">Code word?</label>
+          <input
+            class="form__input"
+            type="text"
+            name="inviteCode"
+            id="invite-code"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <div class="form__auth">
+          <button class="form__submit" type="submit">Enter</button>
+          <a href="/" class="form__back">Back</a>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<div class="messages__grid">
+  <div class="messages__item">
+    <div class="messages__header">
+      <div class="messages__user-info">
+        <div class="messages__avatar-wrapper">
+          <img
+            class="messages__avatar"
+            src="<%= locals.currentUser?.avatar ? `/uploads/${locals.currentUser.avatar}` : '/avatar-placeholder.svg' %>"
+            alt="user avatar"
+          />
+        </div>
+        <p class="messages__username">
+          src="<%= locals.currentUser?.avatar ?
+          `/uploads/${locals.currentUser.avatar}` : '/avatar-placeholder.svg'
+          %>"
+        </p>
+      </div>
+      <p class="messages__timestamp">2h</p>
+    </div>
+    <p class="messages__text">
+      I flirted with a stranger at a wedding last weekend and thought about it
+      every day since. My partner was three tables away.
+    </p>
+  </div>
+</div>
